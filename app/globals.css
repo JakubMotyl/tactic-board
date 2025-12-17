@@ -6,6 +6,8 @@
   --color-light: #4e9f3d;
   --color-white: #f5f5f5;
   --color-cream: #d8e9a8;
+  --font-sans: var(--font-inter);
+  --font-logo: var(--font-russo);
 }
 
 html {
@@ -15,5 +17,51 @@ html {
 body {
   background-color: var(--color-bg);
   color: var(--color-cream);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+}
+@layer utilities {
+  .navbar {
+    position: absolute;
+    z-index: 50;
+    left: 50%;
+    top: 2rem;
+    transform: translateX(-50%);
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    border: 1px solid var(--color-cream);
+    background: rgba(255, 255, 255, 0.07);
+    box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+  .nav-link {
+    position: relative;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 0.25rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    border-radius: 1rem;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: var(--color-cream);
+    transition: transform 0.3s ease-out;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+  }
+  .nav-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
 }
