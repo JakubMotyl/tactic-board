@@ -30,7 +30,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 2rem;
     border: 1px solid var(--color-cream);
     background: rgba(255, 255, 255, 0.07);
     box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1);
@@ -46,22 +45,23 @@ body {
     gap: 0.25rem;
     font-weight: 600;
     letter-spacing: 1px;
+    border: 1px solid var(--color-cream);
+    border-radius: 2rem;
+    transition: all 0.4s;
   }
-  .nav-link::after {
-    content: "";
-    position: absolute;
-    bottom: -2px;
-    border-radius: 1rem;
-    left: 0;
-    height: 2px;
-    width: 100%;
+  .nav-link:hover,
+  .nav-link:active {
+    @apply bg-cream text-bg;
+  }
+  .go-to-text {
+    @apply sm:text-base text-sm text-cream;
+  }
+  .go-to-arrow {
+    @apply sm:w-5 sm:h-3 w-4 h-2;
+    border-radius: 0.125rem;
+    overflow: hidden;
     background: var(--color-cream);
-    transition: transform 0.3s ease-out;
-    transform: scaleX(0);
-    transform-origin: bottom right;
-  }
-  .nav-link:hover::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
+    display: inline-block;
+    clip-path: polygon(0 0, 50% 100%, 100% 0);
   }
 }

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Russo_One } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
 const inter = Inter({
@@ -26,7 +27,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${russo.variable}`}>
-      <body>
+      <body className="relative">
+        <Navbar />
         {children}
         <Footer />
       </body>
