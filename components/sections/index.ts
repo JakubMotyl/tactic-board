@@ -1,2 +1,2 @@
 export { default as Hero } from "./Hero/Hero";
-export { default as Board } from "./Board/Board";
+export { default as Creator } from "./Creator/Creator";

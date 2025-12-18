@@ -4,7 +4,7 @@
   --color-bg: #191a19;
   --color-dark: #1e5128;
   --color-light: #4e9f3d;
-  --color-white: #f5f5f5;
+  --color-white: #f8f8f8;
   --color-cream: #d8e9a8;
   --font-sans: var(--font-inter);
   --font-logo: var(--font-russo);
@@ -63,5 +63,15 @@ body {
     background: var(--color-cream);
     display: inline-block;
     clip-path: polygon(0 0, 50% 100%, 100% 0);
+  }
+  .creator-btn {
+    @apply rounded-4xl px-8 py-2 border border-cream cursor-pointer duration-400;
+  }
+  .creator-btn:hover,
+  .creator-btn:active {
+    @apply bg-cream text-bg;
+  }
+  .creator-cat-picker {
+    @apply flex w-full justify-center cursor-pointer hover:bg-cream hover:text-bg active:bg-cream active:text-bg duration-400 py-3;
   }
 }
