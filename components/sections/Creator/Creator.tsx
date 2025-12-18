@@ -1,7 +1,23 @@
+"use client";
 import Menu from "./Menu/Menu";
 import Board from "./Board/Board";
+import { useState } from "react";
+
+export type ValuesProps = Record<number, string | number>;
 
 export default function Creator() {
+  const [values, setValues] = useState<ValuesProps>({
+    1: "striped-green",
+    2: "4-4-2",
+    3: 11,
+  });
+
+  const handleChange = (id: number, newValue: string | number) => {
+    setValues((prev) => ({
+      ...prev,
+      [id]: newValue,
+    }));
+  };
   return (
     <section
       id="creator"
@@ -20,8 +36,8 @@ export default function Creator() {
           <button className="creator-btn">Save</button>
         </div>
       </div>
-      <div className="w-full flex md:flex-row flex-col items-center justify-between gap-4 h-[75dvh]">
-        <Menu />
+      <div className="w-full flex md:flex-row flex-col items-center justify-between gap-4">
+        <Menu values={values} handleChange={handleChange} />
         <Board />
       </div>
     </section>
