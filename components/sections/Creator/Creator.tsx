@@ -37,8 +37,12 @@ export default function Creator() {
         </div>
       </div>
       <div className="w-full flex md:flex-row flex-col items-center justify-between gap-4">
-        <Menu values={values} handleChange={handleChange} />
-        <Board />
+        <Menu
+          values={values}
+          setValues={setValues}
+          handleChange={handleChange}
+        />
+        <Board values={values} />
       </div>
     </section>
   );

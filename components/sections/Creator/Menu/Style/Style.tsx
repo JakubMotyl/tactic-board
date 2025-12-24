@@ -1,4 +1,3 @@
-"use client";
 import { styleData } from "@/data/menu/style";
 import { TiArrowSortedDown } from "react-icons/ti";
 import type { ValuesProps } from "../../Creator";

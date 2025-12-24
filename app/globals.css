@@ -2,8 +2,6 @@
 
 @theme {
   --color-bg: #191a19;
-  --color-dark: #1e5128;
-  --color-light: #4e9f3d;
   --color-white: #f8f8f8;
   --color-cream: #d8e9a8;
   --font-sans: var(--font-inter);
@@ -73,5 +71,8 @@ body {
   }
   .creator-cat-picker {
     @apply flex w-full justify-center cursor-pointer hover:bg-cream hover:text-bg active:bg-cream active:text-bg duration-400 py-3;
+  }
+  .players-input {
+    @apply w-1/2 py-1 px-5 border-none outline-cream;
   }
 }

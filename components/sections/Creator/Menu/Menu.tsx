@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 import Style from "./Style/Style";
 import Players from "./Players/Players";
 import MyLineups from "./MyLineups/MyLineups";
@@ -7,10 +7,11 @@ import type { ValuesProps } from "../Creator";
 
 interface MenuProps {
   values: ValuesProps;
+  setValues: Dispatch<SetStateAction<ValuesProps>>;
   handleChange: (id: number, newValue: string | number) => void;
 }
 
-export default function Menu({ values, handleChange }: MenuProps) {
+export default function Menu({ values, setValues, handleChange }: MenuProps) {
   const [category, setCategory] = useState<string>("style");
   return (
     <div className="h-[75dvh] w-full md:w-1/2 border border-white rounded-2xl overflow-hidden divide-y divide-white flex flex-col">
@@ -45,7 +46,11 @@ export default function Menu({ values, handleChange }: MenuProps) {
           <Style values={values} handleChange={handleChange} />
         )}
         {category === "players" && (
-          <Players values={values} handleChange={handleChange} />
+          <Players
+            values={values}
+            handleChange={handleChange}
+            setValues={setValues}
+          />
         )}
         {category === "my lineups" && <MyLineups />}
       </div>
