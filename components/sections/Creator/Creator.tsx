@@ -11,6 +11,7 @@ export default function Creator() {
     2: "4-4-2",
     3: 11,
   });
+  const [playerDetails, setPlayerDetails] = useState();
 
   const handleChange = (id: number, newValue: string | number) => {
     setValues((prev) => ({

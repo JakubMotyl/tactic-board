@@ -75,4 +75,7 @@ body {
   .players-input {
     @apply w-1/2 py-1 px-5 border-none outline-cream;
   }
+  .sign-btn {
+    @apply px-4 py-1 2xl:text-lg md:text-base text-sm cursor-pointer rounded-4xl duration-200 font-medium;
+  }
 }

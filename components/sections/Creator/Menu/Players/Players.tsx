@@ -19,6 +19,10 @@ export default function Players({
   // TODO
   // HANDLE CHANGE FUNCKJA NA ZMIANE DANYCH W PLAYERS
   // POPRAWA MULTIPLE FUNCKJI TYCH SAMYCH 0_0
+  // SPRAWDZIC ROZWIAZANIE
+  // STWORZYC USESTATE DLA PLAYERS Z DEFAULT WARTOSCIAMI W TYM COMP
+  // ZMIANA WARTOSCI NA ONCHANGE
+  // SETVALUES JEST USELLES
 
   // const handleChange = (id: number, newValue: string | number) => {
   //   setValues((prev) => ({
