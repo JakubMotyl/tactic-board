@@ -7,11 +7,11 @@ export const boardColors = {
     primary: "#fbbf24",
     secondary: "#d97706",
   },
-  "striped-red": {
+  "striped-blue": {
     primary: "#3b82f6",
     secondary: "#2563eb",
   },
-  "striped-blue": {
+  "striped-red": {
     primary: "#ef4444",
     secondary: "#dc2626",
   },

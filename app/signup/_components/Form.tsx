@@ -12,24 +12,9 @@ export default function Form() {
       className="flex flex-col w-full gap-6"
     >
       <div className="flex flex-col gap-3">
-        <Input
-          id="username"
-          label="Username"
-          type="text"
-          placeholder="Username"
-        />
-        <Input
-          id="email"
-          label="Email Adress"
-          type="email"
-          placeholder="Email"
-        />
-        <Input
-          id="password"
-          label="Password"
-          type="password"
-          placeholder="Password"
-        />
+        <Input id="username" label="Username" type="text" placeholder=" " />
+        <Input id="email" label="Email Adress" type="email" placeholder=" " />
+        <Input id="password" label="Password" type="password" placeholder=" " />
       </div>
       <button
         type="submit"

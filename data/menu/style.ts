@@ -42,7 +42,6 @@ export const styleData: StyleConfig[] = [
       { label: "9", value: 9 },
       { label: "7", value: 7 },
       { label: "5", value: 5 },
-      { label: "3", value: 3 },
     ],
   },
 ];
