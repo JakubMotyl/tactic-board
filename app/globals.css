@@ -61,6 +61,7 @@ body {
     background: var(--color-cream);
     display: inline-block;
     clip-path: polygon(0 0, 50% 100%, 100% 0);
+    animation: bouncing 1s infinite ease-in-out;
   }
   .creator-btn {
     @apply rounded-4xl px-8 py-2 border border-cream cursor-pointer duration-400;
@@ -77,5 +78,15 @@ body {
   }
   .sign-btn {
     @apply px-4 py-1 2xl:text-lg md:text-base text-sm cursor-pointer rounded-4xl duration-200 font-medium;
+  }
+}
+
+@keyframes bouncing {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
   }
 }

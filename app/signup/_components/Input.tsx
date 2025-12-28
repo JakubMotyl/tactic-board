@@ -1,5 +1,3 @@
-import React from "react";
-
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label: string;
   id: string;
@@ -15,7 +13,7 @@ export default function Input({ id, label, ...props }: InputProps) {
       />
       <label
         htmlFor={id}
-        className="absolute cursor-text text-sm top-1/2 -translate-y-1/2 left-4 duration-200 peer-focus:top-4 peer-focus:text-xs"
+        className="absolute left-4 -translate-y-1/2 duration-200 cursor-text top-4 text-xs peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-base peer-focus:top-4 peer-focus:text-xs"
       >
         {label}
       </label>
