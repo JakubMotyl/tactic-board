@@ -2,6 +2,7 @@
 import Menu from "./Menu/Menu";
 import Board from "./Board/Board";
 import { useState } from "react";
+import { getInitialPlayers } from "@/data/menu/players";
 
 export type ValuesProps = Record<number, string | number>;
 
@@ -11,7 +12,6 @@ export default function Creator() {
     2: "4-4-2",
     3: 11,
   });
-  const [playerDetails, setPlayerDetails] = useState();
 
   const handleChange = (id: number, newValue: string | number) => {
     setValues((prev) => ({

@@ -10,7 +10,7 @@ export type Player = {
 
 const FORMATIONS: Record<string, { x: number; y: number }[]> = {
   "4-4-2": [
-    { x: 50, y: 90 },
+    { x: 50, y: 92 },
     { x: 15, y: 75 },
     { x: 38, y: 80 },
     { x: 62, y: 80 },
@@ -23,7 +23,7 @@ const FORMATIONS: Record<string, { x: number; y: number }[]> = {
     { x: 62, y: 20 },
   ],
   "4-3-3": [
-    { x: 50, y: 90 },
+    { x: 50, y: 92 },
     { x: 15, y: 75 },
     { x: 38, y: 80 },
     { x: 62, y: 80 },
@@ -36,7 +36,7 @@ const FORMATIONS: Record<string, { x: number; y: number }[]> = {
     { x: 85, y: 25 },
   ],
   "3-5-2": [
-    { x: 50, y: 90 },
+    { x: 50, y: 92 },
     { x: 25, y: 80 },
     { x: 50, y: 82 },
     { x: 75, y: 80 },
@@ -49,7 +49,7 @@ const FORMATIONS: Record<string, { x: number; y: number }[]> = {
     { x: 65, y: 20 },
   ],
   "4-5-1": [
-    { x: 50, y: 90 },
+    { x: 50, y: 92 },
     { x: 15, y: 75 },
     { x: 38, y: 80 },
     { x: 62, y: 80 },
@@ -71,7 +71,7 @@ export const getInitialPlayers = (
   return coords.map((pos, id) => ({
     id: id,
     numb: id + 1,
-    name: "Click to edit",
+    name: `Player ${id + 1}`,
     position: pos,
   }));
 };

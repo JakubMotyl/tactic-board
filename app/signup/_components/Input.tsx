@@ -15,7 +15,7 @@ export default function Input({ id, label, ...props }: InputProps) {
       />
       <label
         htmlFor={id}
-        className="absolute text-base top-1/2 -translate-y-1/2 left-4 duration-200 peer-focus:top-4 peer-focus:text-sm"
+        className="absolute cursor-text text-sm top-1/2 -translate-y-1/2 left-4 duration-200 peer-focus:top-4 peer-focus:text-xs"
       >
         {label}
       </label>
