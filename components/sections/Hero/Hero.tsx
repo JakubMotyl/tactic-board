@@ -16,7 +16,7 @@ export default function Hero() {
         </div>
         <a
           href="#creator"
-          className="absolute bottom-4 flex flex-col gap-0.5 items-center cursor-pointer hover:scale-95 active:scale-95 duration-300"
+          className="absolute bottom-4 flex flex-col gap-1 items-center cursor-pointer hover:scale-95 active:scale-95 duration-300"
         >
           <span className="go-to-text">Go to creator</span>
           <div className="go-to-arrow"></div>
