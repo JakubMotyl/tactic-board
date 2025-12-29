@@ -1,15 +1,14 @@
 import { boardColors } from "@/data/board/board";
 import { ValuesProps } from "../Creator";
-import { getInitialPlayers } from "@/data/menu/players";
+import type { Player } from "@/data/menu/players";
 
 interface BoardProps {
-  values: ValuesProps;
+  pitchStyle: string | number;
+  players: Player[];
 }
 
-export default function Board({ values }: BoardProps) {
-  const currentStyle = values[1] as keyof typeof boardColors;
-  console.log(currentStyle);
-  const players = getInitialPlayers();
+export default function Board({ pitchStyle, players }: BoardProps) {
+  const currentStyle = pitchStyle as keyof typeof boardColors;
   return (
     <div className="md:w-1/2 w-full flex items-center  justify-center">
       <div className="h-[75dvh] relative aspect-68/105 overflow-hidden">

@@ -55,19 +55,18 @@ const FORMATIONS: Record<string, { x: number; y: number }[]> = {
     { x: 62, y: 80 },
     { x: 85, y: 75 },
     { x: 15, y: 45 },
-    { x: 35, y: 60 },
+    { x: 30, y: 60 },
     { x: 50, y: 65 },
-    { x: 65, y: 60 },
+    { x: 70, y: 60 },
     { x: 85, y: 45 },
-    { x: 50, y: 15 },
+    { x: 50, y: 25 },
   ],
 };
 
 export const getInitialPlayers = (
   formationName: string = "4-4-2"
 ): Player[] => {
-  const coords = FORMATIONS[formationName];
-
+  const coords = FORMATIONS[formationName] || FORMATIONS["4-4-2"];
   return coords.map((pos, id) => ({
     id: id,
     numb: id + 1,

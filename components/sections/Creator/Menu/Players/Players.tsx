@@ -4,7 +4,7 @@ import { Dispatch, SetStateAction } from "react";
 interface PlayersProps {
   values: ValuesProps;
   setValues: Dispatch<SetStateAction<ValuesProps>>;
-  handleChange: (id: number, newValue: string | number) => void;
+  handleChange: (id: string, newValue: string | number) => void;
 }
 
 export default function Players({

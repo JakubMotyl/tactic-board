@@ -3,22 +3,30 @@ import Menu from "./Menu/Menu";
 import Board from "./Board/Board";
 import { useState } from "react";
 import { getInitialPlayers } from "@/data/menu/players";
+import type { Player } from "@/data/menu/players";
 
-export type ValuesProps = Record<number, string | number>;
+export type ValuesProps = Record<string, string | number>;
 
 export default function Creator() {
+  const [players, setPlayers] = useState<Player[]>(getInitialPlayers("4-4-2"));
+
   const [values, setValues] = useState<ValuesProps>({
-    1: "striped-green",
-    2: "4-4-2",
-    3: 11,
+    pitchStyle: "striped-green",
+    formation: "4-4-2",
+    playersCount: 11,
   });
 
-  const handleChange = (id: number, newValue: string | number) => {
+  const handleChange = (id: string, newValue: string | number) => {
     setValues((prev) => ({
       ...prev,
       [id]: newValue,
     }));
+
+    if (id === "formation") {
+      setPlayers(getInitialPlayers(String(newValue)));
+    }
   };
+
   return (
     <section
       id="creator"
@@ -43,7 +51,7 @@ export default function Creator() {
           setValues={setValues}
           handleChange={handleChange}
         />
-        <Board values={values} />
+        <Board pitchStyle={values["pitchStyle"]} players={players} />
       </div>
     </section>
   );

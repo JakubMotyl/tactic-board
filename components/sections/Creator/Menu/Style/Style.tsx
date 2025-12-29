@@ -4,7 +4,7 @@ import type { ValuesProps } from "../../Creator";
 
 interface StyleProps {
   values: ValuesProps;
-  handleChange: (id: number, newValue: string | number) => void;
+  handleChange: (id: string, newValue: string | number) => void;
 }
 
 export default function Style({ values, handleChange }: StyleProps) {

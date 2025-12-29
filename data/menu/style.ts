@@ -4,7 +4,7 @@ type SelectOption = {
 };
 
 type StyleConfig = {
-  id: number;
+  id: string;
   label: string;
   defaultValue: string | number;
   options: SelectOption[];
@@ -12,7 +12,7 @@ type StyleConfig = {
 
 export const styleData: StyleConfig[] = [
   {
-    id: 1,
+    id: "pitchStyle",
     label: "Field",
     defaultValue: "striped-green",
     options: [
@@ -23,7 +23,7 @@ export const styleData: StyleConfig[] = [
     ],
   },
   {
-    id: 2,
+    id: "formation",
     label: "Formation",
     defaultValue: "4-4-2",
     options: [
@@ -34,7 +34,7 @@ export const styleData: StyleConfig[] = [
     ],
   },
   {
-    id: 3,
+    id: "playersCount",
     label: "Player Count",
     defaultValue: 11,
     options: [
