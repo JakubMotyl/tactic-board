@@ -3,15 +3,23 @@ import { Dispatch, SetStateAction, useState } from "react";
 import Style from "./Style/Style";
 import Players from "./Players/Players";
 import MyLineups from "./MyLineups/MyLineups";
+import type { Player } from "@/data/menu/players";
 import type { ValuesProps } from "../Creator";
 
 interface MenuProps {
+  players: Player[];
   values: ValuesProps;
   setValues: Dispatch<SetStateAction<ValuesProps>>;
+  setPlayers: Dispatch<SetStateAction<Player[]>>;
   handleChange: (id: string, newValue: string | number) => void;
 }
 
-export default function Menu({ values, setValues, handleChange }: MenuProps) {
+export default function Menu({
+  players,
+  setPlayers,
+  values,
+  handleChange,
+}: MenuProps) {
   const [category, setCategory] = useState<string>("style");
   return (
     <div className="h-[75dvh] w-full md:w-1/2 border border-white rounded-2xl overflow-hidden divide-y divide-white flex flex-col">
@@ -47,9 +55,9 @@ export default function Menu({ values, setValues, handleChange }: MenuProps) {
         )}
         {category === "players" && (
           <Players
-            values={values}
+            players={players}
+            setPlayers={setPlayers}
             handleChange={handleChange}
-            setValues={setValues}
           />
         )}
         {category === "my lineups" && <MyLineups />}
