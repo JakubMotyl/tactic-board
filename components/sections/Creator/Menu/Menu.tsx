@@ -54,11 +54,7 @@ export default function Menu({
           <Style values={values} handleChange={handleChange} />
         )}
         {category === "players" && (
-          <Players
-            players={players}
-            setPlayers={setPlayers}
-            handleChange={handleChange}
-          />
+          <Players players={players} setPlayers={setPlayers} />
         )}
         {category === "my lineups" && <MyLineups />}
       </div>
