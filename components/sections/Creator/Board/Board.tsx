@@ -1,17 +1,34 @@
 import { boardColors } from "@/data/board/board";
-import { ValuesProps } from "../Creator";
+import { RefObject } from "react";
 import type { Player } from "@/data/menu/players";
 
 interface BoardProps {
   pitchStyle: string | number;
   players: Player[];
+  imageRef: RefObject<HTMLDivElement | null>;
+  lineupName: string;
 }
 
-export default function Board({ pitchStyle, players }: BoardProps) {
+export default function Board({
+  pitchStyle,
+  players,
+  imageRef,
+  lineupName,
+}: BoardProps) {
   const currentStyle = pitchStyle as keyof typeof boardColors;
   return (
     <div className="md:w-1/2 w-full flex items-center  justify-center">
-      <div className="h-[75dvh] relative aspect-68/105 overflow-hidden">
+      <div
+        ref={imageRef}
+        className="h-[75dvh] relative aspect-68/105 overflow-hidden"
+      >
+        {/* Lineup Name */}
+        <div className="absolute top-0 right-1 text-bg">
+          <span className="text-xs text-bg font-semibold uppercase">
+            {lineupName}
+          </span>
+        </div>
+
         {/* FOOTBALL PITCH SVG */}
         <svg viewBox="0 0 68 105" className="w-full h-full overflow-hidden">
           <defs>

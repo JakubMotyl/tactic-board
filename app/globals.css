@@ -74,7 +74,7 @@ body {
     @apply flex w-full justify-center cursor-pointer hover:bg-cream hover:text-bg active:bg-cream active:text-bg duration-400 py-3;
   }
   .players-input {
-    @apply w-1/2 py-1 px-5 border-none outline-cream;
+    @apply w-full py-1 pl-2 text-sm font-light border border-cream outline-none focus:border-2;
   }
   .sign-btn {
     @apply px-4 py-1 2xl:text-lg md:text-base text-sm cursor-pointer rounded-4xl duration-200 font-medium;

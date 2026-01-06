@@ -6,6 +6,7 @@ interface PlayersProps {
 }
 
 export default function Players({ players, setPlayers }: PlayersProps) {
+  // Change player data function
   const handleChangePlayerData = (
     id: number,
     cat: "name" | "numb",
@@ -22,37 +23,52 @@ export default function Players({ players, setPlayers }: PlayersProps) {
 
   return (
     <div className="flex-1 flex gap-4 justify-between">
-      <div className="w-full">
-        <p>Player Number</p>
-        <div>
+      <div className="w-full flex flex-col gap-2">
+        <p className="">Player Number</p>
+        <div className="h-full flex flex-col justify-between">
           {players.map((player) => (
             <div key={player.id}>
               <input
-                type="number"
-                min={1}
-                max={99}
-                maxLength={2}
-                value={player.numb}
-                onChange={(e) =>
-                  handleChangePlayerData(player.id, "numb", e.target.value)
-                }
-                className="w-full"
+                type="text"
+                value={player.numb === 0 ? "" : player.numb}
+                onChange={(e) => {
+                  const value = e.target.value;
+                  if (value === "") {
+                    handleChangePlayerData(player.id, "numb", value);
+                    return;
+                  }
+                  if (!/^\d+$/.test(value)) return;
+                  if (value.length > 2) return;
+                  if (Number(value) > 99) return;
+
+                  handleChangePlayerData(player.id, "numb", value);
+                }}
+                className="players-input"
               />
             </div>
           ))}
         </div>
       </div>
-      <div className="w-full">
+      <div className="w-full flex flex-col gap-2">
         <p>Player Name</p>
-        <div>
+        <div className="h-full flex flex-col justify-between">
           {players.map((player) => (
             <div key={player.id}>
               <input
                 type="text"
                 value={player.name}
-                onChange={(e) =>
-                  handleChangePlayerData(player.id, "name", e.target.value)
-                }
+                onChange={(e) => {
+                  const value = e.target.value;
+                  if (value === "") {
+                    handleChangePlayerData(player.id, "name", value);
+                    return;
+                  }
+                  if (!/^[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ.\s]+$/.test(value)) return;
+                  if (value.length > 12) return;
+
+                  handleChangePlayerData(player.id, "name", value);
+                }}
+                className="players-input"
               />
             </div>
           ))}

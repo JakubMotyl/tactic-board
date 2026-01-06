@@ -1,14 +1,17 @@
 "use client";
 import Menu from "./Menu/Menu";
 import Board from "./Board/Board";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { getInitialPlayers } from "@/data/menu/players";
 import type { Player } from "@/data/menu/players";
+import { toPng } from "html-to-image";
 
 export type ValuesProps = Record<string, string | number>;
 
 export default function Creator() {
   const [players, setPlayers] = useState<Player[]>(getInitialPlayers("4-4-2"));
+  const imageRef = useRef<HTMLDivElement>(null);
+  const [lineupName, setLineupName] = useState("my-lineup");
 
   const [values, setValues] = useState<ValuesProps>({
     pitchStyle: "striped-green",
@@ -27,6 +30,27 @@ export default function Creator() {
     }
   };
 
+  const handleDownload = async () => {
+    if (!imageRef.current) return;
+
+    try {
+      const dataUrl = await toPng(imageRef.current, {
+        quality: 1.0,
+        pixelRatio: 2,
+      });
+      const link = document.createElement("a");
+      if (!lineupName) {
+        alert("Please enter a lineup name before downloading.");
+        return;
+      }
+      link.download = `${lineupName}.png`;
+      link.href = dataUrl;
+      link.click();
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <section
       id="creator"
@@ -36,13 +60,20 @@ export default function Creator() {
         <div className="w-full flex items-center justify-between">
           <input
             type="text"
+            value={lineupName}
+            onChange={(e) => {
+              if (e.target.value.length > 18) return;
+              setLineupName(e.target.value);
+            }}
             placeholder="Name lineup..."
             className="outline-none text-cream placeholder:text-cream/60 border border-cream px-4 py-2 rounded-4xl"
           />
           <button className="creator-btn">Save</button>
         </div>
         <div className="flex items-center justify-center w-full">
-          <button className="creator-btn">Download Image</button>
+          <button className="creator-btn" onClick={() => handleDownload()}>
+            Download Image
+          </button>
         </div>
       </div>
       <div className="w-full flex md:flex-row flex-col items-center justify-between gap-4">
@@ -53,7 +84,12 @@ export default function Creator() {
           setValues={setValues}
           handleChange={handleChange}
         />
-        <Board pitchStyle={values["pitchStyle"]} players={players} />
+        <Board
+          pitchStyle={values["pitchStyle"]}
+          players={players}
+          imageRef={imageRef}
+          lineupName={lineupName}
+        />
       </div>
     </section>
   );
