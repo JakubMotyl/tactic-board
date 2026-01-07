@@ -42,9 +42,3 @@ A highly customizable digital strategy board for visualizing football tactics, c
     # or
     yarn dev
     ```
-
-
-
-<p align="center">
-  Built with ❤️ by <a href="https://github.com/JakubMotyl">Jakub Motyl</a>
-</p>
