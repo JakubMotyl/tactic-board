@@ -21,7 +21,7 @@ A highly customizable digital strategy board for visualizing football tactics, c
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/JakubMotyl/tactic-board.git](https://github.com/JakubMotyl/tactic-board.git)
+    git clone https://github.com/JakubMotyl/tactic-board.git
     ```
 
 2.  **Navigate to the project directory:**
