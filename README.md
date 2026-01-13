@@ -20,9 +20,9 @@ A highly customizable digital strategy board for visualizing football tactics, c
 
 **🧪 Key Test Scenarios**
 
-**Formation Logic:** Validates that selecting different tactical formations (e.g., 4-4-2, 4-3-3) correctly recalculates coordinates for all 11 players.
-**Data Structure:** Ensures that generated player objects strictly follow the required TypeScript interfaces (id, number, name, position).
-**Edge Cases:** Verifies system stability by testing default fallbacks for missing formation parameters.
+* **Formation Logic:** Validates that selecting different tactical formations (e.g., 4-4-2, 4-3-3) correctly recalculates coordinates for all 11 players.
+* **Data Structure:** Ensures that generated player objects strictly follow the required TypeScript interfaces (id, number, name, position).
+* **Edge Cases:** Verifies system stability by testing default fallbacks for missing formation parameters.
 
 ###⚙️ How to Run Locally
 
