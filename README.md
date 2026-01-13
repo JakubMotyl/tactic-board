@@ -8,6 +8,7 @@ A highly customizable digital strategy board for visualizing football tactics, c
 
 * **Core:** TypeScript, Next.js, React
 * **Styling:** Tailwind CSS
+* **Testing:** Vitest
 * **Utilities:** html-to-image
 
 **✨ Features**
@@ -16,6 +17,12 @@ A highly customizable digital strategy board for visualizing football tactics, c
 * Customize pitch colors and visual themes.
 * Personalize player names and jersey numbers.
 * Export the strategy board as a downloadable image.
+
+**🧪 Key Test Scenarios**
+
+**Formation Logic:** Validates that selecting different tactical formations (e.g., 4-4-2, 4-3-3) correctly recalculates coordinates for all 11 players.
+**Data Structure:** Ensures that generated player objects strictly follow the required TypeScript interfaces (id, number, name, position).
+**Edge Cases:** Verifies system stability by testing default fallbacks for missing formation parameters.
 
 ###⚙️ How to Run Locally
 
